@@ -97,3 +97,6 @@ ignore = [
 # pipeline never imports. Drop this override once podcast-creator ships a
 # release without moviepy (already removed on its main branch).
 override-dependencies = ["pillow>=12.2.0"]
+
+[tool.uv.sources]
+podcast-creator = { git = "https://github.com/mogottsch/podcast-creator.git", rev = "af47990b93f7006f2fc60776e99fb9dc9b067b69" }

@@ -2121,7 +2121,7 @@ requires-dist = [
     { name = "langgraph-checkpoint-sqlite", specifier = ">=3.0.1,<4" },
     { name = "loguru", specifier = ">=0.7.2" },
     { name = "numpy", specifier = ">=2.4.1" },
-    { name = "podcast-creator", specifier = ">=0.12.0,<1" },
+    { name = "podcast-creator", git = "https://github.com/mogottsch/podcast-creator.git?rev=af47990b93f7006f2fc60776e99fb9dc9b067b69" },
     { name = "pycountry", specifier = ">=26.2.16" },
     { name = "pydantic", specifier = ">=2.9.2" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
@@ -2432,7 +2432,7 @@ wheels = [
 [[package]]
 name = "podcast-creator"
 version = "0.12.0"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/mogottsch/podcast-creator.git?rev=af47990b93f7006f2fc60776e99fb9dc9b067b69#af47990b93f7006f2fc60776e99fb9dc9b067b69" }
 dependencies = [
     { name = "ai-prompter" },
     { name = "click" },
@@ -2448,10 +2448,6 @@ dependencies = [
     { name = "requests" },
     { name = "tenacity" },
     { name = "tiktoken" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/95/e3/d7112e86ec4194c14f6024dd0a0d1509b5ef70c76bf41c8359db22c6a9d9/podcast_creator-0.12.0.tar.gz", hash = "sha256:16efbafb3103fecf7f37f434e8dcaf2e5e2929c505b9be833faa25287bc8d9ad", size = 486668, upload-time = "2026-03-03T13:43:18.993Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2f/6c/f9ed9d1e313183506d5774e4490a36ca6c0f231899055d658e283b26aaed/podcast_creator-0.12.0-py3-none-any.whl", hash = "sha256:605080b5841710733b7bcb6ff2fcb05b6a77f2aabd3c7bec617b58b03250fb47", size = 79295, upload-time = "2026-03-03T13:43:17.797Z" },
 ]
 
 [[package]]

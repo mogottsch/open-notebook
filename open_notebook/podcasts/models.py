@@ -181,7 +181,10 @@ class SpeakerProfile(ObjectModel):
                 f"Speaker profile '{self.name}' has no voice model configured. "
                 "Please update the profile to select a voice model."
             )
-        return await _resolve_model_config(self.voice_model)
+        provider, model_name, config = await _resolve_model_config(self.voice_model)
+        if model_name == "microsoft/VibeVoice-1.5B":
+            config = {**config, "single_pass_multi_speaker": True}
+        return provider, model_name, config
 
     @classmethod
     async def get_by_name(cls, name: str) -> Optional["SpeakerProfile"]:
