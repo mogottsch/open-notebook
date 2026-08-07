@@ -33,6 +33,7 @@ FROM python:3.12-slim-trixie AS backend-builder
 # Install build dependencies (uv downloads pre-built wheels for most packages)
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
     build-essential \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv using the official method
