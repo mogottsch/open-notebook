@@ -42,6 +42,6 @@ async def test_vibevoice_enables_single_pass_multispeaker_config():
     assert config == {
         "base_url": "http://tts/v1",
         "single_pass_multi_speaker": True,
-        "timeout": 1800,
+        "timeout": 10800,
         "response_format": "wav",
     }

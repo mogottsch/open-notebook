@@ -39,7 +39,7 @@ def with_podcast_tts_capabilities(model_name: str, config: dict) -> dict:
         return {
             **config,
             "single_pass_multi_speaker": True,
-            "timeout": 1800,
+            "timeout": 10800,
             "response_format": "wav",
         }
     return config
