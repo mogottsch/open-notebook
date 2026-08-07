@@ -99,4 +99,4 @@ ignore = [
 override-dependencies = ["pillow>=12.2.0"]
 
 [tool.uv.sources]
-podcast-creator = { git = "https://github.com/mogottsch/podcast-creator.git", rev = "af47990b93f7006f2fc60776e99fb9dc9b067b69" }
+podcast-creator = { git = "https://github.com/mogottsch/podcast-creator.git", rev = "f5161950aedb4458ecf8d43d8b7710c22c10cdb2" }

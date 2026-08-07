@@ -36,7 +36,12 @@ async def _resolve_model_config(
 def with_podcast_tts_capabilities(model_name: str, config: dict) -> dict:
     """Attach podcast rendering capabilities implied by a TTS model."""
     if model_name == "microsoft/VibeVoice-1.5B":
-        return {**config, "single_pass_multi_speaker": True}
+        return {
+            **config,
+            "single_pass_multi_speaker": True,
+            "timeout": 1800,
+            "response_format": "wav",
+        }
     return config
 
 

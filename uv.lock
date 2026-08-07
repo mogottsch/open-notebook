@@ -2121,7 +2121,7 @@ requires-dist = [
     { name = "langgraph-checkpoint-sqlite", specifier = ">=3.0.1,<4" },
     { name = "loguru", specifier = ">=0.7.2" },
     { name = "numpy", specifier = ">=2.4.1" },
-    { name = "podcast-creator", git = "https://github.com/mogottsch/podcast-creator.git?rev=af47990b93f7006f2fc60776e99fb9dc9b067b69" },
+    { name = "podcast-creator", git = "https://github.com/mogottsch/podcast-creator.git?rev=f5161950aedb4458ecf8d43d8b7710c22c10cdb2" },
     { name = "pycountry", specifier = ">=26.2.16" },
     { name = "pydantic", specifier = ">=2.9.2" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
@@ -2432,7 +2432,7 @@ wheels = [
 [[package]]
 name = "podcast-creator"
 version = "0.12.0"
-source = { git = "https://github.com/mogottsch/podcast-creator.git?rev=af47990b93f7006f2fc60776e99fb9dc9b067b69#af47990b93f7006f2fc60776e99fb9dc9b067b69" }
+source = { git = "https://github.com/mogottsch/podcast-creator.git?rev=f5161950aedb4458ecf8d43d8b7710c22c10cdb2#f5161950aedb4458ecf8d43d8b7710c22c10cdb2" }
 dependencies = [
     { name = "ai-prompter" },
     { name = "click" },
