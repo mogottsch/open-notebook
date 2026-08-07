@@ -33,6 +33,13 @@ async def _resolve_model_config(
     return (model.provider, model.name, config)
 
 
+def with_podcast_tts_capabilities(model_name: str, config: dict) -> dict:
+    """Attach podcast rendering capabilities implied by a TTS model."""
+    if model_name == "microsoft/VibeVoice-1.5B":
+        return {**config, "single_pass_multi_speaker": True}
+    return config
+
+
 class EpisodeProfile(ObjectModel):
     """
     Episode Profile - Simplified podcast configuration.
@@ -182,8 +189,7 @@ class SpeakerProfile(ObjectModel):
                 "Please update the profile to select a voice model."
             )
         provider, model_name, config = await _resolve_model_config(self.voice_model)
-        if model_name == "microsoft/VibeVoice-1.5B":
-            config = {**config, "single_pass_multi_speaker": True}
+        config = with_podcast_tts_capabilities(model_name, config)
         return provider, model_name, config
 
     @classmethod

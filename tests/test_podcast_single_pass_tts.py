@@ -2,7 +2,15 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from open_notebook.podcasts.models import SpeakerProfile
+from open_notebook.podcasts.models import SpeakerProfile, with_podcast_tts_capabilities
+
+
+def test_vibevoice_capability_is_preserved_during_profile_config_injection():
+    config = with_podcast_tts_capabilities(
+        "microsoft/VibeVoice-1.5B", {"base_url": "http://tts/v1"}
+    )
+
+    assert config["single_pass_multi_speaker"] is True
 
 
 @pytest.mark.asyncio

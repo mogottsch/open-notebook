@@ -14,6 +14,7 @@ from open_notebook.podcasts.models import (
     PodcastEpisode,
     SpeakerProfile,
     _resolve_model_config,
+    with_podcast_tts_capabilities,
 )
 from open_notebook.utils.model_utils import full_model_dump
 
@@ -225,7 +226,7 @@ async def generate_podcast_command(
                     )
                     sp_dict["tts_provider"] = prov
                     sp_dict["tts_model"] = model
-                    sp_dict["tts_config"] = conf
+                    sp_dict["tts_config"] = with_podcast_tts_capabilities(model, conf)
                 except Exception as e:
                     logger.warning(
                         f"Failed to resolve TTS for speaker profile '{sp_name}', "
@@ -243,7 +244,7 @@ async def generate_podcast_command(
                         )
                         speaker["tts_provider"] = prov
                         speaker["tts_model"] = model
-                        speaker["tts_config"] = conf
+                        speaker["tts_config"] = with_podcast_tts_capabilities(model, conf)
                     except Exception as e:
                         logger.warning(
                             f"Failed to resolve per-speaker TTS for '{speaker.get('name')}': {e}"
